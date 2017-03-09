@@ -1,0 +1,22 @@
+body {
+  background-color: cadetblue;
+}
+#navH {
+  background-color: #eee;
+}
+#headline {
+  color: tomato;
+  text-shadow: 2px 3px 2px rgba(105,105,105, 0.5);
+  font-size: 25px;
+}
+.done-true {
+  text-decoration: line-through;
+  transition: all 1s ease-in-out;
+  opacity: 0.5;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+
+
+}
+.done-false {
+box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+}

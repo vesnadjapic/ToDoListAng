@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To do list</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body ng-controller="FirstCtrl">
+    <nav class="navbar navbar-default" id="navH">
+        <h1 class="navbar-brand" id="headline">Angular ToDo</h1>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for..." ng-model="message">
+                    <span class="input-group-btn"><button class="btn btn-warning" type="button" ng-click="add(todo)">Add</button></span>
+                    <span class="input-group-btn"><button class="btn btn-danger" type="button" ng-click="doneRemove()">Delete Done</button></span>
+                </div>
+            </div>
+            <div class="col-lg-12">
+              <br>
+            </div>
+            <div class="col-lg-4" ng-repeat="prop in todos track by $index">
+              <div class="panel panel-default done-{{prop.done}}">
+                  <div class="panel-heading">ToDo no: {{ $index+1 }}</div>
+                  <div class="panel-body">{{ prop.todo }}</div>
+                  <div class="panel-footer clearfix">
+                      <div class="button-group pull-right">
+                          <button type="button" class="btn btn-success" ng-click="done($index)">Mark - Done</button>
+                          <button type="button" class="btn btn-danger" ng-click="delete($index)">Delete</button>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="app.js" charset="utf-8"></script>
+</body>
+
+</html>
